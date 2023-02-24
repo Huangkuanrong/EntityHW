@@ -25,7 +25,7 @@ namespace EntityHW
 
         public void RefreshComboBox()
         {
-            var products = new ProductModel();
+            var products = new ProductsModel();
             var list = products.ProductTable.ToList();
             var myProductModels = new List<string>();
             foreach (var product in list)

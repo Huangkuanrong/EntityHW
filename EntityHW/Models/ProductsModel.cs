@@ -6,9 +6,9 @@ using System.Linq;
 
 namespace EntityHW.Models
 {
-    public partial class ProductModel : DbContext
+    public partial class ProductsModel : DbContext
     {
-        public ProductModel()
+        public ProductsModel()
             : base("name=ProductsModel")
         {
             AppDomain.CurrentDomain.SetData("DataDirectory", Directory.GetCurrentDirectory());

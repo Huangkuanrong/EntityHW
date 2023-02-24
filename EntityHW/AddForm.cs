@@ -30,7 +30,7 @@ namespace EntityHW
             };
             try
             {
-                ProductModel products = new ProductModel();
+                ProductsModel products = new ProductsModel();
                 products.ProductTable.Add(data);
                 products.SaveChanges();
                 MessageBox.Show("Add file compelete");

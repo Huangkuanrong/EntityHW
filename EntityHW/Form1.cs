@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EntityHW.Models;
 
 namespace EntityHW
 {
@@ -27,6 +28,12 @@ namespace EntityHW
         {
             var form = new ModifyForm();
             form.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var form = new ViewForm();
+            form.ShowDialog();
         }
     }
 }

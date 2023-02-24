@@ -9,9 +9,7 @@ namespace EntityHW.Models
     [Table("ProductTable")]
     public partial class ProductTable
     {
-        public int Id { get; set; }
-
-        [Required]
+        [Key]
         [StringLength(50)]
         public string Model { get; set; }
 
