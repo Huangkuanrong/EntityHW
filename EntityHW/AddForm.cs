@@ -70,5 +70,76 @@ namespace EntityHW
             cmd.ExecuteNonQuery();
             cn.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ProductTable data = new ProductTable()
+            {
+                Model = textBox1.Text.Trim(),
+                Name = textBox2.Text.Trim(),
+                Quantity = textBox3.Text.Trim(),
+                Price = textBox4.Text.Trim(),
+                Category = textBox5.Text.Trim(),
+            };
+            try
+            {
+                SearchData(data);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            
+        }
+
+        public void SearchData(ProductTable data)
+        {
+            var cn = Form1.OpenConnection();
+            cn.Open();
+            var cmd = new SqlCommand();
+
+            if (textBox1.Text != "" || textBox2.Text != "" || textBox3.Text != "" || textBox4.Text != "" || textBox5.Text != "")
+            {
+                if (textBox1.Text != "")
+                {
+                    cmd = new SqlCommand("Select * from ProductTable where Model = @Model", cn);
+                    cmd.Parameters.AddWithValue("@Model", data.Model);
+                }
+
+                if (textBox2.Text != "")
+                {
+                    cmd = new SqlCommand("Select * from ProductTable where Name = @Name", cn);
+                    cmd.Parameters.AddWithValue("@Name", data.Name);
+                }
+
+                if (textBox3.Text != "")
+                {
+                    cmd = new SqlCommand("Select * from ProductTable where Quantity = @Quantity", cn);
+                    cmd.Parameters.AddWithValue("@Quantity", data.Quantity);
+                }
+
+                if (textBox4.Text != "")
+                {
+                    cmd = new SqlCommand("Select * from ProductTable where Price = @Price", cn);
+                    cmd.Parameters.AddWithValue("@Price", data.Price);
+                }
+
+                if (textBox5.Text != "")
+                {
+                    cmd = new SqlCommand("Select * from ProductTable where Category = @Category", cn);
+                    cmd.Parameters.AddWithValue("@Category", data.Category);
+                }
+                var da = new SqlDataAdapter(cmd);
+                var dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                cn.Close();
+                MessageBox.Show("Found data complete");
+            }
+            else
+            {
+                BindData.toDataGridView(this.dataGridView1);
+            }
+        }
     }
 }

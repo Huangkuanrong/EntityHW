@@ -190,7 +190,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ModifyForm";
-            this.Text = "ModifyForm";
+            this.Text = "Update and Delete";
             this.Load += new System.EventHandler(this.ModifyForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
