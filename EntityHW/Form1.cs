@@ -16,5 +16,17 @@ namespace EntityHW
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var form = new AddForm();
+            form.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var form = new ModifyForm();
+            form.Show();
+        }
     }
 }
