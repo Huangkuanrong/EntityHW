@@ -48,7 +48,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ViewForm";
             this.Text = "ViewForm";
-            this.Load += new System.EventHandler(this.ViewForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
